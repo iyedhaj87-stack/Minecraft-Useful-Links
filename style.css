@@ -1,0 +1,145 @@
+/* --- Core Page Setup --- */
+body {
+    background-color: #121212;
+    background-image: radial-gradient(circle, #1e1e1e 10%, transparent 11%);
+    background-size: 20px 20px; /* Subtle pixelated grid background */
+    color: #f5f5f5;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* --- Container Card --- */
+.container {
+    background-color: #1c1c1c;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+    border: 2px solid #2d2d2d; /* Crisp borders */
+    text-align: center;
+    width: 360px;
+}
+
+/* --- Heading Styling --- */
+h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #52ec14; /* XP Green */
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Main Layout --- */
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dropdown-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* --- Standard Buttons --- */
+.link-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #262626;
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid #383838;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-item:hover {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #52ec14;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(82, 236, 20, 0.15);
+}
+
+/* --- Arrow Rotations --- */
+.arrow {
+    font-size: 11px;
+    color: #777;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.link-item:hover .arrow {
+    color: #52ec14;
+}
+.dropdown-group.open .arrow {
+    transform: rotate(-180deg);
+    color: #52ec14;
+}
+
+/* --- Nested Sub-Buttons Container --- */
+.sub-links {
+    display: none;
+    gap: 10px;
+    animation: fadeIn 0.25s ease forwards;
+}
+
+.sub-links.show {
+    display: flex;
+}
+
+/* --- Sub-Item Buttons --- */
+.sub-item {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #222;
+    border: 1px solid #333;
+    transition: all 0.2s ease;
+}
+
+/* Modrinth Branding Color */
+.sub-item.modrinth-btn {
+    border-left: 4px solid #00af5c;
+}
+.sub-item.modrinth-btn:hover {
+    background-color: #00af5c;
+    border-color: #00af5c;
+    box-shadow: 0 4px 12px rgba(0, 175, 92, 0.3);
+}
+
+/* CurseForge Branding Color */
+.sub-item.curseforge-btn {
+    border-left: 4px solid #ff8041;
+}
+.sub-item.curseforge-btn:hover {
+    background-color: #ff8041;
+    border-color: #ff8041;
+    box-shadow: 0 4px 12px rgba(255, 128, 65, 0.3);
+}
+
+/* Smooth Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
